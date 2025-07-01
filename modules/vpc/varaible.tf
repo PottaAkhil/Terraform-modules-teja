@@ -16,9 +16,7 @@ variable "instance_tenancy" {
   default     = "default"
 }
 
-variable "subnet_id_public" {
-  type = list(string)
-}
+
 variable "availability_zone" {
   type = list(string)
 }
