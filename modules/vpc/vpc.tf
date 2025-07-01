@@ -91,23 +91,4 @@ resource "aws_route_table_association" "b" {
   subnet_id      = aws_subnet.subnet-private[count.index].id
   route_table_id = aws_route_table.private.id
 }
-resource "aws_security_group" "web_sg" {
-  name   = "HTTP and SSH"
-  vpc_id = aws_vpc.vpc.id
-    dynamic "ingress" {
-    for_each = var.rules
-      content {
-      from_port   = ingress.value["port"]
-      to_port     = ingress.value["port"]
-      protocol    = ingress.value["proto"]
-      cidr_blocks = ingress.value["cidr_blocks"]
-    }
-  }
 
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = -1
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
