@@ -55,10 +55,4 @@ variable "environment_tag" {
     "prod" = "P"
   }
 }
-variable "rules" {
-  type = list(object({
-    port = number
-    proto = string
-    cidr_blocks = list(string)
-  }))
-  }
+
