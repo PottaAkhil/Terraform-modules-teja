@@ -93,7 +93,7 @@ resource "aws_route_table_association" "b" {
 }
 resource "aws_security_group" "web_sg" {
   name   = "HTTP and SSH"
-  vpc_id = aws_vpc.VPC-akhil.id
+  vpc_id = aws_vpc.vpc.id
     dynamic "ingress" {
     for_each = var.rules
       content {
