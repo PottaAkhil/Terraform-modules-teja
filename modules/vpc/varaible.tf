@@ -20,6 +20,10 @@ variable "instance_tenancy" {
 variable "availability_zone" {
   type = list(string)
 }
+
+variable "subnet_id_public" {
+  type = list(string)
+}
 variable "subnet_id_private" {
   type = list(string)
 }
