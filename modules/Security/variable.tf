@@ -1,3 +1,7 @@
+variable "vpc_id" {
+  type = string
+}
+
 variable "rules" {
   type = list(object({
     port = number

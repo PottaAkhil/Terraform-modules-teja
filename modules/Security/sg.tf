@@ -1,6 +1,6 @@
 
 resource "aws_security_group" "sg" {
-  vpc_id = "${data.terraform_remote_state.network.outputs.vpc_id}"
+  vpc_id = var.vpc_id
   dynamic "ingress" {
     for_each = var.rules
     content {
