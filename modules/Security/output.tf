@@ -1,3 +1,7 @@
-output "sg-ec2" {
-  value = aws_security_group.ec2-sg.id
+output "sg-id" {
+  value = aws_security_group.sg.id
+}
+
+output "sg-name" {
+  value = aws_security_group.sg.name
 }
